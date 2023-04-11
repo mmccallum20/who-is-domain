@@ -13,7 +13,6 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setDomainSearch("");
-    console.log(domainSearch);
   };
 
   async function getData() {
@@ -81,7 +80,7 @@ function App() {
         <input
           className="font-link"
           placeholder="Enter Domain Name"
-          name="domainSearch"
+          label="domainSearch"
           id="domainSearch"
           value={domainSearch}
           onChange={(e) => handleInputChange(e)}
@@ -115,49 +114,55 @@ function App() {
                     </tr>
                     <tr>
                       <td>Address</td>
-                      <td>{newItem.address}</td>
+                      <td key={newItem.address}>{newItem.address}</td>
                     </tr>
 
                     <tr>
                       <td>City</td>
-                      <td>{newItem.city}</td>
+                      <td key={newItem.city}>{newItem.city}</td>
                     </tr>
                     <tr>
                       <td>State</td>
-                      <td>{newItem.state}</td>
+                      <td key={newItem.state}>{newItem.state}</td>
                     </tr>
                     <tr>
                       <td>Zip</td>
-                      <td>{newItem.zip}</td>
+                      <td key={newItem.zip}>{newItem.zip}</td>
                     </tr>
                     <tr>
                       <td>Country</td>
-                      <td>{newItem.country}</td>
+                      <td key={newItem.country}>{newItem.country}</td>
                     </tr>
 
                     <tr>
                       <td>Creation Date</td>
-                      <td>{newItem.creationDate}</td>
+                      <td key={newItem.creationDate}>{newItem.creationDate}</td>
                     </tr>
 
                     <tr>
                       <td>Dnssec</td>
-                      <td>{newItem.dnsSec}</td>
+                      <td key={newItem.dnsSec}>{newItem.dnsSec}</td>
                     </tr>
 
                     <tr>
                       <td>Domain Name</td>
-                      <td>{newItem.domainName}</td>
+                      <td key={newItem.domainName}>{newItem.domainName}</td>
                     </tr>
 
                     <tr>
-                      <td>{newItem.emailOrHostnameTitle}</td>
-                      <td>{newItem.emailOrHostnameValue}</td>
+                      <td key={newItem.emailOrHostnameTitle}>
+                        {newItem.emailOrHostnameTitle}
+                      </td>
+                      <td key={newItem.emailOrHostnameValue}>
+                        {newItem.emailOrHostnameValue}
+                      </td>
                     </tr>
 
                     <tr>
                       <td>Expiration Date</td>
-                      <td>{newItem.expirationDate}</td>
+                      <td key={newItem.expirationDate}>
+                        {newItem.expirationDate}
+                      </td>
                     </tr>
                   </>
                 );
